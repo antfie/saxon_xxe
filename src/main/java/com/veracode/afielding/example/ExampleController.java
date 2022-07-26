@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.xml.sax.InputSource;
 
 import net.sf.saxon.TransformerFactoryImpl;
+import net.sf.saxon.lib.Feature;
 
 
 @RestController
@@ -46,7 +47,7 @@ public class ExampleController {
 
 
 		TransformerFactoryImpl factory = (TransformerFactoryImpl) TransformerFactory.newInstance("net.sf.saxon.TransformerFactoryImpl", getClass().getClassLoader());
-		factory.setAttribute(net.sf.saxon.lib.Feature.ALLOWED_PROTOCOLS.name, "");
+		factory.setAttribute(Feature.ALLOWED_PROTOCOLS.name, "");
 		factory.setAttribute("http://javax.xml.XMLConstants/property/accessExternalDTD", "");
 		factory.setAttribute("http://javax.xml.XMLConstants/property/accessExternalStylesheet", "");
 
